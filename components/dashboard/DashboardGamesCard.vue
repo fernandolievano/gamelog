@@ -9,7 +9,7 @@
     </div>
 
     <div
-      class="px-2 py-2 md:pl-4 w-full h-full flex justify-between items-start gap-4 bg-gradient-to-b from-white to-day dark:from-black dark:to-night rounded-b-2xl">
+      class="px-2 py-4 sm:pl-4 w-full h-full flex justify-between items-start gap-4 bg-gradient-to-b from-white to-day dark:from-black dark:to-night rounded-b-2xl">
       <h3 class="text-sm font-semibold font-poppins tracking-wider max-w-[80%] line-clamp-2">{{ name }}</h3>
       <span
         class="bg-gradient-to-tr from-purple-500 to-pink-600 text-white px-2 py-1 rounded-2xl text-xs font-sans flex-nowrap text-nowrap">
