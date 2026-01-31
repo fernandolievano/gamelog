@@ -30,6 +30,8 @@
 
 - 🎮 Game list with cover art and key information
 - 🔍 Individual game detail page
+- 🔀 Sort by name, playtime, or recently played
+- ❤️ Favorites with localStorage persistence
 - 🌓 Light/Dark mode support
 - 📱 Fully responsive design
 - ⚡ Optimized performance (SSR, lazy loading)
@@ -40,7 +42,7 @@
 ## 🚧 Roadmap
 
 - [ ] Quick filters by genre, platform, and status
-- [ ] Persistent favorites
+- [x] Persistent favorites
 - [ ] Backend integration
 - [ ] PWA support (offline mode)
 
