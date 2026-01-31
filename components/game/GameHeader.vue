@@ -5,9 +5,12 @@
 
     <div
       class="w-full min-h-full max-w-[450px] lg:max-w-full text-white px-1 lg:px-8 mt-4 lg:mt-0 flex flex-col items-start justify-start gap-4 overflow-auto">
-      <h3 class="pt-4 lg:pt-0 font-bold tracking-wider text-3xl text-left lg:text-4xl">
-        {{ game.name }}
-      </h3>
+      <div class="pt-4 lg:pt-0 flex items-center gap-4">
+        <h3 class="font-bold tracking-wider text-3xl text-left lg:text-4xl">
+          {{ game.name }}
+        </h3>
+        <FavoriteButton :appid="game.steam_appid" />
+      </div>
 
       <p class="text-sm text-gray-two">
         {{ game.short_description }}
@@ -45,6 +48,7 @@
 
 <script lang="ts" setup>
 import { Clock4, CalendarDays } from 'lucide-vue-next';
+import FavoriteButton from '@/components/global/FavoriteButton.vue';
 import type { SteamGame, SteamGameProp } from '@/interfaces/steam';
 
 const props = defineProps<{
