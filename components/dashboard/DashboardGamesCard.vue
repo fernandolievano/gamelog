@@ -1,11 +1,14 @@
 <template>
   <nuxt-link :to="`/games/${appid}`"
-    class="w-full max-w-[400px] mx-auto grid grid-cols-1 grid-rows-[2fr_auto] md:grid-rows-[2fr_60px] gap-0 items-start h-full cursor-pointer shadow-lg shadow-gray-300 dark:shadow-zinc-900 rounded-2xl transition-all hover:shadow-xl  hover:-translate-y-1.5   hover:dark:shadow-zinc-800 ease-linear"
+    class="group w-full max-w-[400px] mx-auto grid grid-cols-1 grid-rows-[2fr_auto] md:grid-rows-[2fr_60px] gap-0 items-start h-full cursor-pointer shadow-lg shadow-gray-300 dark:shadow-zinc-900 rounded-2xl transition-all hover:shadow-xl  hover:-translate-y-1.5   hover:dark:shadow-zinc-800 ease-linear"
     :title="name">
     <div class="relative overflow-hidden flex items-start h-fit bg-white dark:bg-black">
       <img class="object-top rounded-2xl"
         :class="[imageHasError ? 'object-contain p-4 w-[50%] h-full max-h-[155px] mx-auto' : 'w-full h-auto object-cover border-t border-day dark:border-night']"
         :src="image" :alt="imageAlt" @error="setDefaultImage" loading="lazy">
+
+      <FavoriteButton :appid="appid"
+        class="absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
     </div>
 
     <div
@@ -20,6 +23,8 @@
 </template>
 
 <script lang="ts" setup>
+import FavoriteButton from '@/components/global/FavoriteButton.vue';
+
 const props = defineProps({
   appid: {
     type: Number,
