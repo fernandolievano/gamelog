@@ -21,7 +21,7 @@
 </template>
 
 <script lang="ts" setup>
-import { LogOut, LayoutDashboard, Signal } from 'lucide-vue-next';
+import { LogOut, LayoutDashboard, Signal, Heart } from 'lucide-vue-next';
 import { useUiStore } from '@/stores/ui';
 import { onClickOutside } from '@vueuse/core';
 
@@ -32,6 +32,7 @@ const menuRef = ref<HTMLElement | null>(null);
 const iconMap: Record<string, Component> = {
   LayoutDashboard,
   Signal,
+  Heart,
 };
 
 const getIconComponent = (icon: string) => {

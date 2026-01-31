@@ -1,11 +1,12 @@
-import { defineStore, acceptHMRUpdate } from 'pinia';
+import { defineStore, acceptHMRUpdate } from "pinia";
 
-export const useUiStore = defineStore('ui', {
+export const useUiStore = defineStore("ui", {
   state: () => ({
     menuLinks: [
-      { path: '/', name: 'Dashboard', icon: 'LayoutDashboard' }
+      { path: "/", name: "Dashboard", icon: "LayoutDashboard" },
+      { path: "/favorites", name: "Favorites", icon: "Heart" },
     ],
-    menuIsActive: false
+    menuIsActive: false,
   }),
   actions: {
     openMenu() {
@@ -13,8 +14,8 @@ export const useUiStore = defineStore('ui', {
     },
     closeMenu() {
       this.menuIsActive = false;
-    }
-  }
+    },
+  },
 });
 
 if (import.meta.hot) {
