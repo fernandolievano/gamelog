@@ -9,6 +9,7 @@ export const useSteamStore = defineStore("steam", {
     gameLoading: true,
     game_count: 0,
     sortBy: "playtime_desc" as "name_asc" | "playtime_desc" | "recent_desc",
+    searchQuery: "",
   }),
   actions: {
     setPlayerSummary(player: SteamPlayer) {
@@ -31,6 +32,9 @@ export const useSteamStore = defineStore("steam", {
     setSortBy(sort: "name_asc" | "playtime_desc" | "recent_desc") {
       this.sortBy = sort;
     },
+    setSearchQuery(q: string) {
+      this.searchQuery = q;
+    },
     async logout() {
       try {
         await $fetch("/api/auth/logout", {
@@ -45,7 +49,12 @@ export const useSteamStore = defineStore("steam", {
   },
   getters: {
     sortedGames: (state) => {
-      const games = [...state.games];
+      let games = [...state.games];
+
+      if (state.searchQuery.trim().length > 0) {
+        const searchVal = state.searchQuery.toLowerCase().trim();
+        games = games.filter(game => game.name.toLowerCase().includes(searchVal));
+      }
 
       return games.sort((a, b) => {
         switch (state.sortBy) {
