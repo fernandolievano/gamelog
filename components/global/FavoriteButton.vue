@@ -1,15 +1,7 @@
 <template>
-  <button
-    type="button"
-    class="favorite-btn"
-    :class="{ 'is-active': isFavorited }"
-    :aria-label="isFavorited ? 'Remove from favorites' : 'Add to favorites'"
-    @click.stop.prevent="handleClick"
-  >
-    <Heart
-      class="favorite-icon"
-      :class="{ 'fill-current': isFavorited }"
-    />
+  <button type="button" class="favorite-btn" :class="{ 'is-active': isFavorited }"
+    :aria-label="isFavorited ? 'Remove from favorites' : 'Add to favorites'" @click.stop.prevent="handleClick">
+    <Heart class="favorite-icon" :class="{ 'fill-current': isFavorited }" />
   </button>
 </template>
 
@@ -55,7 +47,6 @@ const handleClick = () => {
 
 .favorite-btn:hover {
   background: rgba(255, 255, 255, 0.3);
-  transform: scale(1.1);
 }
 
 .favorite-btn:active {
@@ -65,16 +56,19 @@ const handleClick = () => {
 .favorite-icon {
   width: 20px;
   height: 20px;
-  color: #9ca3af; /* gray-400 */
+  color: #9ca3af;
+  /* gray-400 */
   transition: all 0.2s ease-in-out;
 }
 
 .favorite-btn:hover .favorite-icon {
-  color: #fb7185; /* rose-400 */
+  color: #fb7185;
+  /* rose-400 */
 }
 
 .favorite-btn.is-active .favorite-icon {
-  color: #f43f5e; /* rose-500 */
+  color: #f43f5e;
+  /* rose-500 */
 }
 
 /* Dark mode adjustments */
