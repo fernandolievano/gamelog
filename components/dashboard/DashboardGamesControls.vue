@@ -14,7 +14,7 @@
           </svg>
         </div>
         <input type="text" v-model="searchInput" placeholder="Search your library..."
-          class="block w-full pl-10 pr-10 py-3 border border-day dark:border-night rounded-xl bg-transparent placeholder-gray-500 focus:outline-none transition-all focus:border-blue-500" />
+          class="block w-full pl-10 pr-10 py-3 border border-day dark:border-night rounded-xl bg-transparent placeholder-gray-500 focus:outline-none transition-all focus:border-indigo-500" />
         <!-- Internal Clear Button (X) -->
         <button v-show="searchInput" @click="clearSearch"
           class="absolute inset-y-0 right-0 pr-3 flex items-center text-gray-400 hover:text-gray-200 cursor-pointer transition-colors">
@@ -40,8 +40,8 @@
             class="absolute z-20 mt-2 w-48 bg-gradient-to-b from-white to-day dark:from-black dark:to-night rounded-xl shadow-lg right-0 top-12 overflow-hidden border border-day dark:border-night">
             <ul class="p-0 m-0 list-none">
               <li v-for="option in sortOptions" :key="option.value" @click="handleSort(option.value)"
-                class="px-4 py-3 text-sm hover:bg-day dark:hover:bg-night cursor-pointer border-b border-gray-800 last:border-0"
-                :class="{ 'font-bold text-blue-400': steamStore.sortBy === option.value }">
+                class="px-4 py-3 text-sm hover:bg-day dark:hover:bg-night cursor-pointer border-b border-gray-200 dark:border-gray-800 last:border-0 transition-colors"
+                :class="{ 'font-bold text-indigo-400': steamStore.sortBy === option.value }">
                 {{ option.label }}
               </li>
             </ul>
